@@ -43,11 +43,12 @@ int main() {
 	Victim *x = new Victim();
 	x->internal = 10;
 
-	delegate<int> first(x, 
-						&Victim::foo,
-						1,
-						std::ref(via_ref),
-						std::move(entity));
+	delegate<int> first(
+			x, 
+			&Victim::foo,
+			1,
+			std::ref(via_ref),
+			std::move(entity));
 
 	// trying to call nullptr object
 	Victim* nptr = nullptr;
